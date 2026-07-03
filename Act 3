@@ -1,0 +1,11 @@
+import pandas as pd
+
+datos = pd.read_csv("estudiantes.csv")
+
+correlaciones = datos.corr(numeric_only=True)
+print(correlaciones)
+
+relacion = datos["Horas_Estudio"].corr(
+ datos["Calificacion_Final"])
+
+print("Correlación horas/calificación:", relacion)
